@@ -80,9 +80,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-/**
- * Determine which dessert to show.
- */
+
+ // Define qual sobremesa mostrar
 fun determineDessertToShow(
     desserts: List<Dessert>,
     dessertsSold: Int
@@ -92,10 +91,10 @@ fun determineDessertToShow(
         if (dessertsSold >= dessert.startProductionAmount) {
             dessertToShow = dessert
         } else {
-            // The list of desserts is sorted by startProductionAmount. As you sell more desserts,
-            // you'll start producing more expensive desserts as determined by startProductionAmount
-            // We know to break as soon as we see a dessert who's "startProductionAmount" is greater
-            // than the amount sold.
+            // A lista de sobremesas é ordenada por 'startProductionAmount'. À medida que você vende mais sobremesas,
+            // você começará a produzir sobremesas mais caras conforme determinado por 'startProductionAmount'
+            // Sabemos que devemos dar break assim que vemos uma sobremesa cujo "startProductionAmount" é maior
+            // do que a quantidade vendida.
             break
         }
     }
@@ -103,9 +102,7 @@ fun determineDessertToShow(
     return dessertToShow
 }
 
-/**
- * Share desserts sold information using ACTION_SEND intent
- */
+//Compartilhe informações sobre sobremesas vendidas usando a intenção 'ACTION_SEND'
 private fun shareSoldDessertsInformation(intentContext: Context, dessertsSold: Int, revenue: Int) {
     val sendIntent = Intent().apply {
         action = Intent.ACTION_SEND
@@ -169,11 +166,11 @@ private fun DessertClickerApp(
             dessertImageId = currentDessertImageId,
             onDessertClicked = {
 
-                // Update the revenue
+                // Atualização do rendimento
                 revenue += currentDessertPrice
                 dessertsSold++
 
-                // Show the next dessert
+                // Mostrar próxima sobremesa
                 val dessertToShow = determineDessertToShow(desserts, dessertsSold)
                 currentDessertImageId = dessertToShow.imageId
                 currentDessertPrice = dessertToShow.price
