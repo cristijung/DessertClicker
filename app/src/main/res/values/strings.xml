@@ -1,0 +1,9 @@
+
+<resources>
+    <string name="app_name">Dessert Clicker</string>
+    <string name="dessert_sold">Sobremesas vendidas</string>
+    <string name="total_revenue">Rendimento total</string>
+    <string name="share">Compartilhar</string>
+    <string name="share_text">Cliquei em %1$d Sobremesas totalizando $%2$d #AndroidDessertClicker</string>
+    <string name="sharing_not_available">Compartilhamento não disponível</string>
+</resources>
