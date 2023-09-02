@@ -286,7 +286,7 @@ private fun RevenueInfo(revenue: Int, modifier: Modifier = Modifier) {
             color = MaterialTheme.colorScheme.onSecondaryContainer
         )
         Text(
-            text = "$${revenue}",
+            text = "R$${revenue}",
             textAlign = TextAlign.Right,
             style = MaterialTheme.typography.headlineMedium,
             color = MaterialTheme.colorScheme.onSecondaryContainer
